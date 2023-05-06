@@ -17,6 +17,7 @@ builder.Services.AddDbContext<BethanysPieShopDbContext>(options => {
 });
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -29,5 +30,6 @@ if(app.Environment.IsDevelopment())
 }
 
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 DbInitializer.Seed(app);
 app.Run();
